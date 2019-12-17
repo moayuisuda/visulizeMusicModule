@@ -1,0 +1,38 @@
+{
+  "name": "synth",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --open",
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "moayuisuda",
+  "license": "ISC",
+  "dependencies": {
+    "@tweenjs/tween.js": "^18.3.1",
+    "@types/pixi.js": "^4.8.9",
+    "@types/tween.js": "^17.2.0",
+    "koa": "^2.10.0",
+    "koa-better-body": "^3.1.6",
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
+    "koa2-cors": "^2.0.6",
+    "pixi.js": "^5.1.5",
+    "tone": "^13.8.25"
+  },
+  "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.2.0",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
+    "ts-loader": "^6.2.0",
+    "typescript": "^3.6.4",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.2"
+  }
+}

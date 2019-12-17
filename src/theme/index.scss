@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+}
+
+.stage {
+    height: 100vh;
+    width: 100vw;
+}
+
+.mini {
+    height: 300px;
+    width: 300px;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    background-color: aliceblue;
+}
+
+#app {
+    height: 100%;
+    width: 100%;
+}

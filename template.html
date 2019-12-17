@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="stage">
+            <div id="app"></div>
+        </div>
+        <!-- <div class="mini"></div> -->
+    </div>
+</body>
+<script>
+    window.onload = init;
+    var context;
+    var bufferLoader;
+
+    function init() {
+        context = new webkitAudioContext();
+
+        bufferLoader = new BufferLoader(
+            context,
+            [
+                '../sounds/hyper-reality/br-jam-loop.wav',
+                '../sounds/hyper-reality/laughter.wav',
+            ],
+            finishedLoading
+        );
+
+        bufferLoader.load();
+    }
+
+    function finishedLoading(bufferList) {
+        //创建两个实例并同时播放之
+        var source1 = context.createBufferSource();
+        var source2 = context.createBufferSource();
+        source1.buffer = bufferList[0];
+        source2.buffer = bufferList[1];
+
+        source1.connect(context.destination);
+        source2.connect(context.destination);
+        source1.noteOn(0);
+        source2.noteOn(0);
+    }
+</script>
+
+</html>
