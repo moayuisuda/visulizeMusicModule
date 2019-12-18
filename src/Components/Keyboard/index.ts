@@ -63,7 +63,7 @@ class Keyboard extends Module {
                 key: codeMap[i].key,
                 code: codeMap[i].code,
                 note: codeMap[i].note,
-                container: new PIXI.Sprite()
+                container: new PIXI.Container()
             }
 
             Object.assign(singleKey.container, {
@@ -72,12 +72,24 @@ class Keyboard extends Module {
                 height: 120,
                 width: (codeMap[i].type == 'white') ? 50 : 30,
             })
+            let backGround = new PIXI.Graphics();
+            backGround.beginFill(codeMap[i].type == 'white' ? color.main_color : color.main2_color);
+            backGround.drawRect(0, 0, (codeMap[i].type == 'white') ? 50 : 30, 120);
+            singleKey.container.addChild(backGround);
 
-            if (this.theme != 'default') {
-                singleKey.container.texture = pixi.textures['http://localhost:3000/file/theme/' + this.theme + '/key.jpg']
-            } else {
-                singleKey.container.texture = utils.getColorTexture(codeMap[i].type == 'white' ? color.main_color : color.main2_color);
-            }
+
+            var style = {
+                fontFamily: 'Arial',
+                fontSize: '12px',
+                fontStyle: 'italic',
+                fontWeight: 'bold',
+                fill: 0xffffff,
+                stroke: '#4a1850',
+                // strokeThickness: 3,
+            };
+            let keyName = new PIXI.Text(singleKey.key, style);
+            keyName.x = 5, keyName.y = 5;
+            singleKey.container.addChild(keyName);
 
 
             if (codeMap[i].type == 'white') {
@@ -116,9 +128,8 @@ class Keyboard extends Module {
     }
 
     press(i: singleKeyInstance) {
-        
         i.active = true;
-        if (this.instrument) (<any>this.instrument).triggerAttack(i.note);
+        if (this.instrument)( < any > this.instrument).triggerAttack(i.note);
         console.log('press', i.note);
         let filter = new PIXI.filters.AlphaFilter();
         filter.alpha = 0.3
@@ -127,9 +138,8 @@ class Keyboard extends Module {
     }
 
     release(i: singleKeyInstance) {
-        
         i.active = false;
-        if (this.instrument) (<any>this.instrument).triggerRelease(i.note);
+        if (this.instrument)( < any > this.instrument).triggerRelease(i.note);
         console.log('release', i.note);
         i.container.filters.splice(0, 1);
         i.container.y -= 5;

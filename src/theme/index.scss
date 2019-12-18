@@ -1,5 +1,31 @@
 body {
     margin: 0;
+    overflow: hidden;
+    
+    &::after {
+        content: 'MOAYUISUDA';
+        font-style: italic;
+        position: absolute;
+        top: 0;
+        color: #abdcea;
+        opacity: 0.2;
+        right: -110vw;
+        font-size: 30vw;
+        z-index: -1;
+    }
+    
+    &::before {
+        content: '※ 连接类型的顺序(类型标注在每个模块最上方的括号中)请务必遵循 keyboard(键盘) -> instrument(乐器) -> effect(效果器, 可选) -> master(最终输出)';
+        font-style: italic;
+        position: absolute;
+        // color: #ffc0cb;
+        opacity: 0.5;
+        left: 50px;
+        bottom: 50px;
+        font-size: 20px;
+        z-index: -1;
+    }
+
 }
 
 .stage {

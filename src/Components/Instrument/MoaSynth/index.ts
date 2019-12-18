@@ -31,7 +31,7 @@ class MoaSynth extends Instrument {
 
         this.container.addChild(backGround);
 
-        let title = new PIXI.Text('◥█◣Synth');
+        let title = new PIXI.Text('◥◣Synth');
         title.x = 100 - title.width / 2;
         title.y = 40;
         this.container.addChild(title);

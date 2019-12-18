@@ -79,13 +79,16 @@ class Module {
         let startX: number,
             startY: number;
 
+        this.container.on('mousedown', (e: any) => {
+            console.log('handleDownCon')
+        })
+
         handle.on('mousedown', (e: any) => {
-            console.log('click inner')
+            console.log('handleDown')
             this.isdrag = true;
             startX = e.data.global.x;
             startY = e.data.global.y;
             this.container.zIndex = pixi.app.stage.children[pixi.app.stage.children.length - 1].zIndex + 1;
-            console.log(this.input, this.output, this.line);
         })
 
         handle.on('mouseup', () => {
@@ -115,7 +118,7 @@ class Module {
 
         this.moveHandle.position.set(15, -15);
 
-        let header = new PIXI.Text(this.modName, {
+        let header = new PIXI.Text(`${this.modName}(${this.modType})`, {
             fontSize: '10px'
         });
         header.x = 5;
@@ -124,13 +127,8 @@ class Module {
         moveHandleBackgoround.beginFill(0x000000, 0.2);
         moveHandleBackgoround.drawRect(0, 0, this.container.width - 30, 15);
 
-
         this.moveHandle.addChild(moveHandleBackgoround, header);
-
-
         this.container.addChild(this.moveHandle);
-
-        this.moveHandle.hitArea = this.moveHandle.getLocalBounds();
 
         if (this.modType != 'master') {
 

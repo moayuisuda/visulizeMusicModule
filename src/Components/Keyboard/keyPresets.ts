@@ -7,7 +7,7 @@ interface singleKey {
 }
 
 interface singleKeyInstance extends singleKey {
-    container: PIXI.Sprite
+    container: PIXI.Container
 }
 
 let codeMap: Array<singleKey> = [{

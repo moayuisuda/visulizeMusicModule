@@ -1,7 +1,7 @@
 import * as PIXI from 'pixi.js'
 
 
-function getColorTexture(color: number): PIXI.Texture {
+function getColorTexture(color: number, ifCircle?: boolean): PIXI.Texture {
     
     let colorStr = color.toString(16);
     
@@ -14,8 +14,20 @@ function getColorTexture(color: number): PIXI.Texture {
         ctx.beginPath();
         ctx.fillStyle = colorStr;
         ctx.strokeStyle = colorStr;
-        ctx.rect(0, 0, 1, 1);
+
+        if(ifCircle) 
+        {   
+            canvas.width = 10;
+            canvas.height = 10;
+            ctx.beginPath();
+            ctx.fillStyle = colorStr;
+            ctx.strokeStyle = colorStr;
+            ctx.arc(5, 5, 5, 0, 2 * Math.PI, false);
+        }
+        else ctx.rect(0, 0, 1, 1);
         ctx.stroke();
+        ctx.fill();
+
 
         return PIXI.Texture.from(canvas);;
     } else {
