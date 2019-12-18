@@ -1,4 +1,5 @@
 body {
+    font-family: monospace;
     margin: 0;
     overflow: hidden;
     
@@ -31,6 +32,7 @@ body {
 .stage {
     height: 100vh;
     width: 100vw;
+    position: relative;
 }
 
 .mini {
@@ -45,4 +47,20 @@ body {
 #app {
     height: 100%;
     width: 100%;
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    font-size: 30px;
+    color: #abdcea;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: aliceblue;
+    transition: .5s;
 }
