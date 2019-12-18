@@ -138,7 +138,6 @@ class Sampler extends Instrument {
                 if (this.output) this.soundNode.connect(this.output.soundNode);
                 if (this.input) this.input.soundNode.connect(this.soundNode);
             },
-            'http://localhost:3000/'
         )
     };
 

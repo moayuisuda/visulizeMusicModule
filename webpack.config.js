@@ -1,6 +1,5 @@
 const path = require('path')
 const HtmlPlug = require('html-webpack-plugin')
-const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 
 module.exports = {
     entry: './src/index.ts',
@@ -43,9 +42,6 @@ module.exports = {
             template: 'template.html',
             filename: 'index.html'
         }),
-        new CleanWebpackPlugin({
-            title: 'synth'
-        })
     ],
 
     devServer: {
