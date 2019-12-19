@@ -12,12 +12,12 @@
 ====================================================
 #### 现在我只写了5个简单的模块，点按并移动模块的最上方那一条`灰色栏`可以移动，`灰色栏`上方的信息是`模块名(模块类型)`。
 
-名字为<font color=red>keyboard</font>的就是一个简单的用键盘控制的音符发生器，左上角是对应的键盘字母。
+名字为<font color=#03a9f4>keyboard</font>的就是一个简单的用键盘控制的音符发生器，左上角是对应的键盘字母。
 
-名字为<font color=red>moasynth</font>的就是一个正弦波发生器。
+名字为<font color=#03a9f4>moasynth</font>的就是一个正弦波发生器。
 
-名字为<font color=red>sampler</font>的是一个采样音源，包含钢琴和吉他音源。
+名字为<font color=#03a9f4>sampler</font>的是一个采样音源，包含钢琴和吉他音源。
 
-名字为<font color=red>moafilter</font>的是一个滤波器，点击界面移动小红球位置可以获得不同效果。
+名字为<font color=#03a9f4>moafilter</font>的是一个滤波器，点击界面移动小红球位置可以获得不同效果。
 
-名字为<font color=red>master</font>的就是最终输出节点。
+名字为<font color=#03a9f4>master</font>的就是最终输出节点。
