@@ -1,5 +1,5 @@
-![](https://juejin.im/user/5b42167d5188251b1d4740b7/pins)
 ## :notes:这是一个可视化/模块化的声音生成链
+![](https://user-gold-cdn.xitu.io/2019/12/19/16f1d5e8a8f0ffe9?w=800&h=345&f=gif&s=1927620)
 所有模块都基于`Module`类，在这基础上又初步分了几个基础类:
 
 `Keyboard`类型是音乐信号的发生器，用于给Instrument输出音符
